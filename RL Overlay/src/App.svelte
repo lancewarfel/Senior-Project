@@ -1,14 +1,16 @@
 <script>
   import { processor } from "./lib/processor";
   import { socketMessageStore } from "./lib/socket";
-  import { blueTeamStore, orangeTeamStore, timeStore } from "./lib/stores";
+  import Time from "./lib/Time.svelte";
+  import Score from "./lib/Score.svelte";
+  import Spectating from "./lib/Sectating.svelte";
 
-  $: console.log({ $socketMessageStore });
-  $: processor({ $socketMessageStore });
+  $: console.log($socketMessageStore);
+  $: processor($socketMessageStore);
 </script>
 
 <body>
-  <p>Blue Score: {$blueTeamStore}</p>
-  <p>Orange Score: {$orangeTeamStore}</p>
-  <p>Time: {$timeStore / 60} : {$timeStore % 60}</p>
+  <Score />
+  <Time />
+  <Spectating />
 </body>
