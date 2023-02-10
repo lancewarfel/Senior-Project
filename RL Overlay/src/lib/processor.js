@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { blueTeamStore, orangeTeamStore, targetPlayerStore, timeStore } from './stores';
+import { blueTeamStore, orangeTeamStore, overtimeStore, replayStore, targetPlayerStore, timeStore } from './stores';
 
 export const processor = (socketMessageStore) => {
     R.cond([
@@ -12,6 +12,8 @@ const onUpdateState = ({ data }) => {
     timeStore.set(data.game.time_seconds)
     blueTeamStore.set(data.game.teams[0].score)
     orangeTeamStore.set(data.game.teams[1].score)
+    overtimeStore.set(data.game.isOT)
+    replayStore.set(data.game.isReplay)
 }
 
 
