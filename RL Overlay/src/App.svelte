@@ -4,6 +4,7 @@
   import Time from "./lib/Time.svelte";
   import Score from "./lib/Score.svelte";
   import Spectating from "./lib/Sectating.svelte";
+  import Players from "./lib/Players.svelte";
   import { replayStore } from "./lib/stores";
 
   $: console.log($socketMessageStore);
@@ -13,6 +14,7 @@
 <body>
   <Score />
   <Time />
+  <Players />
   <Spectating />
 
   {$replayStore}
