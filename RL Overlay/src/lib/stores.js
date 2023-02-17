@@ -14,6 +14,7 @@ export const targetPlayerStore = writable({
 export const timeStore = writable(0)
 export const blueTeamStore = writable({})
 export const orangeTeamStore = writable({})
+export const playersStore = writable([])
 export const overtimeStore = writable(false)
 export const replayStore = writable(false)
 
