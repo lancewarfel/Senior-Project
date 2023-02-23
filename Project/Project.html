@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="RL.css">
+    <link rel="stylesheet" href="RL.css?version=1">
     <title>Rocket League Overlay</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
                 cy="80"/>
         </svg>
         <input 
-            value="75"
+            value="100"
             type="number"
             step="5"
             min="0"
@@ -31,8 +31,14 @@
             placeholder="progress"
         >
     </div>
-        <div id="progress-bar"></div>
-        <div id="progress-bar2"></div>
+        <div class="scoreboard"></div>
+        <div class="scoreboard2"></div>
+        <div class="player"><p class="p1">Player1</p><div class="bar"><div id="progress-bar"></div></div></div>
+        <div class="player2"><p class="p1">Player2</p><div class="bar"></div><div id="progress-bar2"></div></div></div>
+        <div class="player3"><p class="p1">Player3</p><div class="bar"></div><div id="progress-bar3"></div></div></div>
+        <div class="player4"><p class="p2">Player4</p><div class="bar2"></div><div id="progress-bar4"></div></div></div>
+        <div class="player5"><p class="p2">Player5</p><div class="bar2"></div><div id="progress-bar5"></div></div></div>
+        <div class="player6"><p class="p2">Player6</p><div class="bar2"></div><div id="progress-bar6"></div></div></div>
             
         <script>
             var circle = document.querySelector('circle');
@@ -44,10 +50,18 @@
             function setProgress(percent){
                 const offset = (circumference - percent / 100 * circumference);
                 circle.style.strokeDashoffset = offset;
-                var line = document.getElementById("progress-bar");
-                line.style.width = Math.round(percent);
-                console.log(Math.round(percent));
-                var line2 = document.getElementById("progress-bar2");
+                bar = Number(percent)*3;
+                bar2 = Number(percent)*3;
+                bar3 = Number(percent)*3;
+                bar4 = Number(percent)*3;
+                bar5 = Number(percent)*3;
+                bar6 = Number(percent)*3;
+                document.getElementById("progress-bar").style.width = bar+"px";
+                document.getElementById("progress-bar2").style.width = bar2+"px";
+                document.getElementById("progress-bar3").style.width = bar3+"px";
+                document.getElementById("progress-bar4").style.width = bar4+"px";
+                document.getElementById("progress-bar5").style.width = bar5+"px";
+                document.getElementById("progress-bar6").style.width = bar6+"px";
             }
 
             const input = document.querySelector('input');
