@@ -1,5 +1,5 @@
 .progress-ring{
-    background-color: rgba(0, 38, 255, 0.493);
+    background-color: rgba(43, 43, 43, 0.493);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,152 +24,544 @@ input{
     bottom: 0;
     right: 0;
 }
-#progress-bar{
-    background-color: rgb(0, 0, 255);
-    width: 250px;
-    height: 5px;
-    top: 10%;
-    left: .5%;
-    position: inherit;
-}
-#progress-bar2{
-    background-color: rgb(0, 0, 255);
-    width: 250px;
-    height: 5px;
-    top: 71%;
-    left: 10.5%;
-    position: inherit;
-}
-#progress-bar3{
-    background-color: rgb(0, 0, 255);
-    width: 250px;
-    height: 5px;
-    top: 73%;
-    left: 10.5%;
-    position: inherit;
-}
-#progress-bar4{
-    background-color: rgb(255, 136, 0);
-    width: 250px;
-    height: 5px;
-    top: 70%;
-    right: 10.1%;
-    position: inherit;
-}
-#progress-bar5{
-    background-color: rgb(255, 136, 0);
-    width: 250px;
-    height: 5px;
-    top: 71%;
-    right: 10.1%;
-    position: inherit;
-}
-#progress-bar6{
-    background-color: rgb(255, 136, 0);
-    width: 250px;
-    height: 5px;
-    top: 70.1%;
-    right: 10.1%;
-    position: inherit;
-}
-.player{
-    background-color: rgba(0, 0, 0, 0.829);
-    height: 25px;
-    width: 270px;
-    top: 2%;
-    left: 0;
-    position: absolute;
-    clip-path: polygon(0 0%,0% 0,95% 0,100% 15%,100% 85%,95% 100%,0% 100%,0% 90%,0% 10%);
-}
-.player2{
-    background-color: rgba(0, 0, 0, 0.829);
-    height: 25px;
-    width: 270px;
-    top: 8%;
-    left: 0;
-    position: absolute;
-    clip-path: polygon(0 0%,0% 0,95% 0,100% 15%,100% 85%,95% 100%,0% 100%,0% 90%,0% 10%);
-}
-.player3{
-    background-color: rgba(0, 0, 0, 0.829);
-    height: 25px;
-    width: 270px;
-    top: 14%;
-    left: 0;
-    position: absolute;
-    clip-path: polygon(0 0%,0% 0,95% 0,100% 15%,100% 85%,95% 100%,0% 100%,0% 90%,0% 10%);
-}
-.player4{
-    background-color: rgba(0, 0, 0, 0.829);
-    height: 25px;
-    width: 270px;
-    top: 2%;
-    right: 0;
-    position: absolute;
-    clip-path: polygon(0 10%,10% -10%,100% 0,100% 0%,100% 100%,100% 100%,5% 100%,0% 85%,0% 10%)
-}
-.player5{
-    background-color: rgba(0, 0, 0, 0.829);
-    height: 25px;
-    width: 270px;
-    top: 8%;
-    right: 0;
-    position: absolute;
-    clip-path: polygon(0 10%,10% -10%,100% 0,100% 0%,100% 100%,100% 100%,5% 100%,0% 85%,0% 10%)
-}
-.player6{
-    background-color: rgba(0, 0, 0, 0.829);
-    height: 25px;
-    width: 270px;
-    top: 14%;
-    right: 0;
-    position: absolute;
-    clip-path: polygon(0 10%,10% -10%,100% 0,100% 0%,100% 100%,100% 100%,5% 100%,0% 85%,0% 10%)
-}
-.bar{
-    position: inherit;
-    width: 227px;
-    height: 6px;
-    top: 70%;
-    left: 10%;
-    background-color: rgba(255, 255, 255, 0.509);
-}
-.bar2{
-    position: inherit;
-    width: 227px;
-    height: 6px;
-    top: 69%;
-    left: 6.1%;
-    background-color: rgba(255, 255, 255, 0.509);
-}
-.p1{
-    position: inherit;
-    padding: 0%;
-    margin: 0%;
-    color: white;
-    left: 10%;
-}
-.p2{
-    position: inherit;
-    padding: 0%;
-    margin: 0%;
-    color: white;
-    right: 10%;
-}
 .scoreboard{
     position: absolute;
     width: 200px;
     height: 15px;
     background-color: rgb(133, 133, 133);
     top: 0%;
-    right: 43%;
+    right: 42%;
 }
 .scoreboard2{
     position: absolute;
-    width: 400px;
-    height: 30px;
+    width: 500px;
+    height: 40px;
     background-color: black;
     top: 15px;
-    right: 35.5%;
-    clip-path: polygon(0 15%, 3% 0, 97% 0, 100% 15%, 100% 85%, 97% 100%, 3% 100%, 0% 85%, 0% 10%)
+    right: 31%;
+    clip-path: polygon(0 15%, 3% 0, 97% 0, 100% 15%, 100% 85%, 97% 100%, 3% 100%, 0% 85%, 0% 0%)
+}
+.scoreboard3{
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    background-color: rgb(133, 133, 133);
+    top: 55px;
+    right: 44%;
+    z-index: 1;
+}
+.scoreboard4{
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.546);
+    top: 55px;
+    right: 36%;
+    clip-path: polygon(0 0%, 3% 0, 97% 0, 100% 0%, 100% 85%, 97% 100%, 3% 100%, 0% 85%, 0% 0%)
+}
+.home{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 25%;
+    left: 1%;
+}
+.away{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 25%;
+    right: 1%;
+}
+.scoreback{
+    position: inherit;
+    width: 30px;
+    height: 40px;
+    background-color: blue;
+    left: 40%;
+}
+.scoreback2{
+    position: inherit;
+    width: 30px;
+    height: 40px;
+    background-color: rgb(255, 136, 0);
+    right: 36%;
+}
+.score{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 15%;
+    left: 35%;
+    font-size:x-large;
+}
+.score2{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 15%;
+    right: 35%;
+    font-size:x-large;
+}
+.timer{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 15%;
+    right: 44%;
+    font-size:x-large;
+}
+.head{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    left: 3%;
+    font-size: 75%;
+}
+.games{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    left: 10%;
+    top: 10%;
+}
+.game1{
+    position: inherit;
+    background-color: blue;
+    height: 5px;
+    width: 17.5px;
+    top: 9%;
+    left: 5%;
+    opacity: 100%;
+}
+.game2{
+    position: inherit;
+    background-color: blue;
+    height: 5px;
+    width: 17.5px;
+    top: 9%;
+    left: 5%;
+    opacity: 100%;
+}
+.game3{
+    position: inherit;
+    background-color: blue;
+    height: 5px;
+    width: 17.5px;
+    top: 9%;
+    left: 5%;
+    opacity: 100%;
+}
+.game4{
+    position: inherit;
+    background-color: rgb(255, 136, 0);
+    height: 5px;
+    width: 17.5px;
+    top: 9%;
+    right: 4%;
+    opacity: 100%;
+}
+.game5{
+    position: inherit;
+    background-color: rgb(255, 136, 0);
+    height: 5px;
+    width: 17.5px;
+    top: 9%;
+    right: 4%;
+    opacity: 100%;
+}
+.game6{
+    position: inherit;
+    background-color: rgb(255, 136, 0);
+    height: 5px;
+    width: 17.5px;
+    top: 9%;
+    right: 4%;
+    opacity: 100%;
+}
+.game1out{
+    position: inherit;
+    background-color: rgba(255, 255, 255, 0.635);
+    height: 6px;
+    width: 19px;
+    top: 39%;
+    left: 4%;
+    opacity: 100%;
+}
+.game2out{
+    position: inherit;
+    background-color: rgba(255, 255, 255, 0.635);
+    height: 6px;
+    width: 19px;
+    top: 39%;
+    left: 12%;
+    opacity: 100%;
+}
+.game3out{
+    position: inherit;
+    background-color: rgba(255, 255, 255, 0.635);
+    height: 6px;
+    width: 19px;
+    top: 39%;
+    left: 20%;
+    opacity: 100%;
+}
+.game4out{
+    position: inherit;
+    background-color: rgba(255, 255, 255, 0.635);
+    height: 6px;
+    width: 19px;
+    top: 39%;
+    right: 4%;
+    opacity: 100%;
+}
+.game5out{
+    position: inherit;
+    background-color: rgba(255, 255, 255, 0.635);
+    height: 6px;
+    width: 19px;
+    top: 39%;
+    right: 12%;
+    opacity: 100%;
+}
+.game6out{
+    position: inherit;
+    background-color: rgba(255, 255, 255, 0.635);
+    height: 6px;
+    width: 19px;
+    top: 39%;
+    right: 20%;
+    opacity: 100%;
+}
+.data{
+    position: absolute;
+    bottom: 1%;
+    left: .5%;
+    width: 300px;
+    height: 175px;
+    background-color: rgba(0, 0, 0, 0.589);
+}
+.statsp{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 2%;
+    left: 37%;
+    font-size: x-large;
+}
+.underline{
+    position: inherit;
+    background-color: blue;
+    width: 275px;
+    height: 1px;
+    top: 18%;
+    left: 4%;
+}
+.statss{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 24%;
+    left: 5%;
+}
+.pscore{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 24%;
+    right: 5%;
+}
+.underline2{
+    position: inherit;
+    background-color: blue;
+    width: 275px;
+    height: 1px;
+    top: 35%;
+    left: 4%;
+}
+.statsg{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 40%;
+    left: 5%;
+}
+.goals{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 40%;
+    right: 5%;
+}
+.underline3{
+    position: inherit;
+    background-color: blue;
+    width: 275px;
+    height: 1px;
+    top: 50%;
+    left: 4%;
+}
+.statsa{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 54%;
+    left: 5%;
+}
+.assists{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 54%;
+    right: 5%;
+}
+.underline4{
+    position: inherit;
+    background-color: blue;
+    width: 275px;
+    height: 1px;
+    top: 64%;
+    left: 4%;
+}
+.statssa{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 67%;
+    left: 5%;
+}
+.saves{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 67%;
+    right: 5%;
+}
+.underline5{
+    position: inherit;
+    background-color: blue;
+    width: 275px;
+    height: 1px;
+    top: 77%;
+    left: 4%;
+}
+.statsd{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 80%;
+    left: 5%;
+}
+.demos{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 80%;
+    right: 5%;
+}
+.underline6{
+    position: inherit;
+    background-color: blue;
+    width: 275px;
+    height: 1px;
+    top: 90%;
+    left: 4%;
+}
+#guageb{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: rgb(255, 255, 255);
+    top: 35%;
+    right: 42%;
+    font-size: x-large;
+    z-index: 1;
+}
+.guageb2{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: rgb(255, 255, 255);
+    top: 50%;
+    right: 32%;
+    font-size: x-large;
+    z-index: 1;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 2%;
+    left: 0%;
+}
+.player{
+    background-color: rgba(0, 0, 0, 0.829);
+    height: 25px;
+    width: 270px;
+    clip-path: polygon(0 0%,0% 0,95% 0,100% 15%,100% 85%,95% 100%,0% 100%,0% 90%,0% 10%);
+}
+
+.container2{
+    display: flex;
+    flex-direction:column;
+    align-items: flex-end;
+    gap: 20px;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 2%;
+    right: 0%;
+}
+.player2{
+    background-color: rgba(0, 0, 0, 0.829);
+    height: 25px;
+    width: 270px;
+    clip-path: polygon(0 10%,10% -10%,100% 0,100% 0%,100% 100%,100% 100%,5% 100%,0% 85%,0% 10%)
+}
+.p1{
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    left: 1%;
+}
+.p2{
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    right: 1%;
+}
+#boost{
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: rgb(255, 255, 255);
+    top: 0%;
+    right: 15%;
+}
+#boost2{
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: rgb(255, 255, 255);
+    top: 30%;
+    right: 15%;
+}
+#boost3{
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 60%;
+    right: 15%;
+}
+#boost4{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 0%;
+    left: 14%;
+}
+#boost5{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 30%;
+    left: 14%;
+}
+#boost6{
+    position: inherit;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    top: 60%;
+    left: 14%;
+}
+#progress-bar{
+    background-color: rgb(0, 0, 255);
+    width: 250px;
+    height: 5px;
+    top: 11%;
+    left: .5%;
+    position: absolute;
+}
+#progress-bar2{
+    background-color: rgb(0, 0, 255);
+    width: 250px;
+    height: 5px;
+    top: 5%;
+    left: .5%;
+    position: absolute;
+}
+#progress-bar3{
+    background-color: rgb(0, 0, 255);
+    width: 250px;
+    height: 5px;
+    top: 10%;
+    left: .5%;
+    position: absolute;
+}
+#progress-bar4{
+    background-color: rgb(255, 136, 0);
+    width: 250px;
+    height: 5px;
+    top: 11%;
+    right: .5%;
+    position: absolute;
+}
+#progress-bar5{
+    background-color: rgb(255, 136, 0);
+    width: 250px;
+    height: 5px;
+    top: 5%;
+    right: .5%;
+    position: absolute;
+}
+#progress-bar6{
+    background-color: rgb(255, 136, 0);
+    width: 250px;
+    height: 5px;
+    top: 10%;
+    right: .5%;
+    position: absolute;
+}
+.bar{
+    position: relative;
+    width: 227px;
+    height: 6px;
+    top: 70%;
+    left: 5%;
+    background-color: rgba(255, 255, 255, 0.571);
+}
+.bar2{
+    position:relative;
+    width: 227px;
+    height: 6px;
+    top: 70%;
+    left: 10%;
+    background-color: rgb(255, 255, 255, 0.571);
 }
