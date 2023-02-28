@@ -7,8 +7,19 @@
     <link rel="stylesheet" href="RL.css?version=1">
     <title>Rocket League Overlay</title>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="RL.css">
+    <title>Rocket League Overlay</title>
+</head>
 <body>
     <div class="gauge">
+        <p id="guageb">56</p>
+        <p class="guageb2">Boost</p>
         <svg 
             class="progress-ring"
             width = "160"
@@ -31,15 +42,77 @@
             placeholder="progress"
         >
     </div>
-        <div class="scoreboard"></div>
-        <div class="scoreboard2"></div>
-        <div class="player"><p class="p1">Player1</p><div class="bar"><div id="progress-bar"></div></div></div>
-        <div class="player2"><p class="p1">Player2</p><div class="bar"></div><div id="progress-bar2"></div></div></div>
-        <div class="player3"><p class="p1">Player3</p><div class="bar"></div><div id="progress-bar3"></div></div></div>
-        <div class="player4"><p class="p2">Player4</p><div class="bar2"></div><div id="progress-bar4"></div></div></div>
-        <div class="player5"><p class="p2">Player5</p><div class="bar2"></div><div id="progress-bar5"></div></div></div>
-        <div class="player6"><p class="p2">Player6</p><div class="bar2"></div><div id="progress-bar6"></div></div></div>
-            
+        <div class="scoreboard">
+            <p class="head"> Nace Starleague | Varsity Plus | Week 4</p>
+        </div>
+        <div class="scoreboard2">
+            <p class="home">Western Kentucky University</p>
+            <div class="scoreback">
+                <p class="score">1</p>
+            </div>
+            <p class="timer">1:10</p>
+            <div class="scoreback2">
+                <p class="score2">1</p>
+            </div>
+            <p class="away">Michigan State University</p>
+        </div>
+        <div class="scoreboard3">
+            <p class="games">Game 4 | Best of 5</p>
+        </div>
+        <div class="scoreboard4">
+            <div class="game1out"><div class="game1"></div></div>
+            <div class="game2out"><div class="game2"></div></div>
+            <div class="game3out"><div class="game3"></div></div>
+            <div class="game4out"><div class="game4"></div></div>
+            <div class="game5out"><div class="game5"></div></div>
+            <div class="game6out"><div class="game6"></div></div>
+        </div>
+        <div class="container">
+            <div class="player">
+                <p class="p1">Player1</p>
+                <div class="bar">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="player">
+                <p class="p1">Player2</p>
+                <div class="bar">
+                    <div id="progress-bar2"></div>
+                </div>
+            </div>
+            <div class="player">
+                <p class="p1">Player3</p>
+                <div class="bar">
+                    <div id="progress-bar3"></div>
+                </div>
+            </div>
+                <p id="boost">100</p>
+                <p id="boost2">100</p>
+                <p id="boost3">100</p>
+        </div>
+        <div class="container2">
+            <div class="player2">
+                <p class="p2">Player4</p>
+                <div class="bar2">
+                    <div id="progress-bar4"></div>
+                </div>
+            </div>
+            <div class="player2">
+                <p class="p2">Player5</p>
+                <div class="bar2">
+                    <div id="progress-bar5"></div>
+                </div>
+            </div>
+            <div class="player2">
+                <p class="p2">Player6</p>
+                <div class="bar2">
+                    <div id="progress-bar6"></div>
+                </div>
+            </div>
+            <p id="boost4">100</p>
+            <p id="boost5">100</p>
+            <p id="boost6">100</p>
+        </div>
         <script>
             var circle = document.querySelector('circle');
             var radius = circle.r.baseVal.value;
@@ -62,6 +135,13 @@
                 document.getElementById("progress-bar4").style.width = bar4+"px";
                 document.getElementById("progress-bar5").style.width = bar5+"px";
                 document.getElementById("progress-bar6").style.width = bar6+"px";
+                document.getElementById("boost").innerText = (bar/3)/.75;
+                document.getElementById("boost2").innerText = (bar2/3)/.75;
+                document.getElementById("boost3").innerText = (bar3/3)/.75;
+                document.getElementById("boost4").innerText = (bar4/3)/.75;
+                document.getElementById("boost5").innerText = (bar5/3)/.75;
+                document.getElementById("boost6").innerText = (bar6/3)/.75;
+                document.getElementById("guageb").innerText = (bar6/3)/.75;
             }
 
             const input = document.querySelector('input');
@@ -73,7 +153,19 @@
                 }
             })
         </script>
-    
-    
+    <div class="data">
+        <p class="statsp">Player1</p>
+        <p class="statss">Score</p><p class="pscore">360</p>
+        <p class="statsg">Goals</p><p class="goals">1</p>
+        <p class="statsa">Assists</p><p class="assists">3</p>
+        <p class="statssa">Saves</p><p class="saves">5</p>
+        <p class="statsd">Demos</p><p class="demos">1</p>
+        <div class="underline"></div>
+        <div class="underline2"></div>
+        <div class="underline3"></div>
+        <div class="underline4"></div>
+        <div class="underline5"></div>
+        <div class="underline6"></div>
+    </div>
 </body>
 </html>
