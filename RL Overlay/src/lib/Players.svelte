@@ -7,46 +7,158 @@
 <div class="playerelement">
   {#if playerList}<!-- test to remove this and add if replay -->
 
-    <ul class="blue">
-      <h1>left side</h1>
+    <div class="blueContainer">
       {#each playerList as player}
         {#if player.team == 0}
-          <li>{player.name}</li>
-          <li>Boost: {player.boost}</li>
-          <li>Score: {player.score}</li>
-          <li>Goals: {player.goals}</li>
-          <li>Assists: {player.assists}</li>
-          <li>Saves: {player.saves}</li>
-          <li>Demos: {player.demos}</li>
-          <hr />
+          <div class="bluePlayer">
+            <p class="blueName">{player.name}</p>
+            <p class="blueBoostNum">{player.boost}</p>
+            <div class="blueBar">
+              <div id="blueBoost" style="width: {player.boost}%" />
+            </div>
+          </div>
         {/if}
       {/each}
-    </ul>
+    </div>
 
-    <ul class="orange">
-      <h1>right side</h1>
+    <div class="orangeContainer">
       {#each playerList as player}
         {#if player.team == 1}
-          <li>{player.name}</li>
-          <li>Boost: {player.boost}</li>
-          <li>Score: {player.score}</li>
-          <li>Goals: {player.goals}</li>
-          <li>Assists: {player.assists}</li>
-          <li>Saves: {player.saves}</li>
-          <li>Demos: {player.demos}</li>
-          <hr />
+          <div class="orangePlayer">
+            <p class="orangeBoostNum">{player.boost}</p>
+            <p class="orangeName">{player.name}</p>
+            <div class="orangeBar">
+              <div id="orangeBoost" style="width: {player.boost}%" />
+            </div>
+          </div>
         {/if}
       {/each}
-    </ul>
+    </div>
   {/if}
 </div>
 
 <style>
-  /* .orange{
-      right side
-    }   */
+  .blueContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 2%;
+    left: 0%;
+  }
 
-  /* .blue{
-      left side
-    } */
+  .bluePlayer {
+    background-image: linear-gradient(rgb(0, 80, 201), rgb(0, 0, 0));
+    height: 30px;
+    width: 250px;
+    clip-path: polygon(
+      0 0%,
+      0% 0,
+      95% 0,
+      100% 15%,
+      100% 85%,
+      95% 100%,
+      0% 100%,
+      0% 90%,
+      0% 10%
+    );
+  }
+
+  .blueName {
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    left: 1%;
+  }
+
+  #blueBoost {
+    background-color: rgb(0, 85, 255);
+    width: 250px;
+    height: 5px;
+    top: 11%;
+    left: 0.5%;
+    position: absolute;
+  }
+
+  .blueBar {
+    position: relative;
+    width: 227px;
+    height: 6px;
+    top: 70%;
+    left: 2px;
+    background-color: rgba(84, 84, 84, 0.409);
+  }
+
+  .orangeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 2%;
+    right: 0%;
+  }
+
+  .orangePlayer {
+    background-image: linear-gradient(rgb(145, 87, 0), rgb(0, 0, 0));
+    height: 30px;
+    width: 250px;
+    clip-path: polygon(
+      0 10%,
+      10% -10%,
+      100% 0,
+      100% 0%,
+      100% 100%,
+      100% 100%,
+      5% 100%,
+      0% 85%,
+      0% 10%
+    );
+  }
+
+  .orangeName {
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    right: 1%;
+  }
+
+  .orangeBar {
+    position: relative;
+    width: 227px;
+    height: 6px;
+    top: 70%;
+    left: 19px;
+    background-color: rgba(84, 84, 84, 0.409);
+  }
+
+  #orangeBoost {
+    background-color: rgb(255, 136, 0);
+    width: 250px;
+    height: 5px;
+    top: 11%;
+    right: 0.5%;
+    position: absolute;
+  }
+
+  .orangeBoostNum {
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    left: 23%;
+  }
+  .blueBoostNum {
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    color: rgb(255, 255, 255);
+    right: 24%;
+  }
 </style>

@@ -1,5 +1,5 @@
-.progress-ring{
-    background-image: radial-gradient(rgb(132, 132, 132),rgb(0, 0, 0));
+.progress-ring {
+    background-image: radial-gradient(rgb(132, 132, 132), rgb(0, 0, 0));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,24 +7,28 @@
     position: relative;
     border-radius: 100%;
 }
-.progress-ring__circle{
+
+.progress-ring__circle {
     stroke-dasharray: 50 25;
     transform: rotate(90deg);
     transform-origin: 50% 50%;
 }
-input{
+
+input {
     position: fixed;
     top: 50%;
     left: 50%;
     width: 80px;
 }
-.gauge{
+
+.gauge {
     display: block;
     position: absolute;
     bottom: 0;
     right: 0;
 }
-#guageb{
+
+#guageb {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -34,7 +38,8 @@ input{
     font-size: x-large;
     z-index: 1;
 }
-.guageb2{
+
+.guageb2 {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -44,8 +49,9 @@ input{
     font-size: x-large;
     z-index: 1;
 }
+
 /* -- Players -- */
-.container{
+.container {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -55,16 +61,17 @@ input{
     top: 2%;
     left: 0%;
 }
-.player{
+
+.player {
     background-image: linear-gradient(rgb(0, 80, 201), rgb(0, 0, 0));
     height: 30px;
     width: 250px;
-    clip-path: polygon(0 0%,0% 0,95% 0,100% 15%,100% 85%,95% 100%,0% 100%,0% 90%,0% 10%);
+    clip-path: polygon(0 0%, 0% 0, 95% 0, 100% 15%, 100% 85%, 95% 100%, 0% 100%, 0% 90%, 0% 10%);
 }
 
-.container2{
+.container2 {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: flex-end;
     gap: 15px;
     width: 300px;
@@ -73,27 +80,31 @@ input{
     top: 2%;
     right: 0%;
 }
-.player2{
+
+.player2 {
     background-image: linear-gradient(rgb(145, 87, 0), rgb(0, 0, 0));
     height: 30px;
     width: 250px;
-    clip-path: polygon(0 10%,10% -10%,100% 0,100% 0%,100% 100%,100% 100%,5% 100%,0% 85%,0% 10%)
+    clip-path: polygon(0 10%, 10% -10%, 100% 0, 100% 0%, 100% 100%, 100% 100%, 5% 100%, 0% 85%, 0% 10%)
 }
-.p1{
+
+.p1 {
     position: absolute;
     padding: 0%;
     margin: 0%;
     color: white;
     left: 1%;
 }
-.p2{
+
+.p2 {
     position: absolute;
     padding: 0%;
     margin: 0%;
     color: white;
     right: 1%;
 }
-#boost{
+
+#boost {
     position: absolute;
     padding: 0%;
     margin: 0%;
@@ -101,7 +112,8 @@ input{
     top: 0%;
     right: 24%;
 }
-#boost2{
+
+#boost2 {
     position: absolute;
     padding: 0%;
     margin: 0%;
@@ -109,7 +121,8 @@ input{
     top: 30%;
     right: 24%;
 }
-#boost3{
+
+#boost3 {
     position: absolute;
     padding: 0%;
     margin: 0%;
@@ -117,7 +130,8 @@ input{
     top: 60%;
     right: 24%;
 }
-#boost4{
+
+#boost4 {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -125,7 +139,8 @@ input{
     top: 0%;
     left: 23%;
 }
-#boost5{
+
+#boost5 {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -133,7 +148,8 @@ input{
     top: 30%;
     left: 23%;
 }
-#boost6{
+
+#boost6 {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -141,7 +157,8 @@ input{
     top: 60%;
     left: 23%;
 }
-#progress-bar{
+
+#progress-bar {
     background-color: rgb(0, 85, 255);
     width: 250px;
     height: 5px;
@@ -149,7 +166,8 @@ input{
     left: .5%;
     position: absolute;
 }
-#progress-bar2{
+
+#progress-bar2 {
     background-color: rgb(0, 85, 255);
     width: 250px;
     height: 5px;
@@ -157,7 +175,8 @@ input{
     left: .5%;
     position: absolute;
 }
-#progress-bar3{
+
+#progress-bar3 {
     background-color: rgb(0, 85, 255);
     width: 250px;
     height: 5px;
@@ -165,7 +184,8 @@ input{
     left: .5%;
     position: absolute;
 }
-#progress-bar4{
+
+#progress-bar4 {
     background-color: rgb(255, 136, 0);
     width: 250px;
     height: 5px;
@@ -173,7 +193,8 @@ input{
     right: .5%;
     position: absolute;
 }
-#progress-bar5{
+
+#progress-bar5 {
     background-color: rgb(255, 136, 0);
     width: 250px;
     height: 5px;
@@ -181,7 +202,8 @@ input{
     right: .5%;
     position: absolute;
 }
-#progress-bar6{
+
+#progress-bar6 {
     background-color: rgb(255, 136, 0);
     width: 250px;
     height: 5px;
@@ -189,7 +211,8 @@ input{
     right: .5%;
     position: absolute;
 }
-.bar{
+
+.bar {
     position: relative;
     width: 227px;
     height: 6px;
@@ -197,43 +220,48 @@ input{
     left: 2px;
     background-color: rgba(84, 84, 84, 0.409);
 }
-.bar2{
-    position:relative;
+
+.bar2 {
+    position: relative;
     width: 227px;
     height: 6px;
     top: 70%;
     left: 19px;
     background-color: rgba(84, 84, 84, 0.409);
 }
+
 /* -- End -- */
 /* --Scoreboard -- */
-.scoreboard{
+.scoreboard {
     position: absolute;
     width: 200px;
     height: 15px;
-    background-image: linear-gradient(rgb(94, 94, 94),rgb(0, 0, 0));
+    background-image: linear-gradient(rgb(94, 94, 94), rgb(0, 0, 0));
     top: 0%;
     right: 42%;
 }
-.scoreboard3{
+
+.scoreboard3 {
     position: absolute;
     width: 150px;
     height: 25px;
-    background-image: linear-gradient(rgb(0, 0, 0),rgb(94, 94, 94));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
     top: 50px;
     right: 44%;
     z-index: 1;
 }
-.gameboard{
+
+.gameboard {
     position: absolute;
     top: 50px;
     left: 32.75%;
     width: 450px;
     height: 20px;
-    background-image: linear-gradient(rgb(0, 0, 0),rgb(94, 94, 94));
-    clip-path: polygon(0 0%,0% 0%,95% 0,100% 0,100% 85%,97% 100%,5% 113%,0% 85%,0% 10%);
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
+    clip-path: polygon(0 0%, 0% 0%, 95% 0, 100% 0, 100% 85%, 97% 100%, 5% 113%, 0% 85%, 0% 10%);
 }
-.scoreboard4{
+
+.scoreboard4 {
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -243,7 +271,8 @@ input{
     width: 150px;
     height: 20px;
 }
-#game1{
+
+#game1 {
     position: absolute;
     background-color: blue;
     height: 5px;
@@ -252,7 +281,8 @@ input{
     left: 8px;
     opacity: 0%;
 }
-#game2{
+
+#game2 {
     position: absolute;
     background-color: blue;
     height: 5px;
@@ -261,7 +291,8 @@ input{
     left: 37.5px;
     opacity: 0%;
 }
-#game3{
+
+#game3 {
     position: absolute;
     background-color: blue;
     height: 5px;
@@ -270,7 +301,8 @@ input{
     left: 66px;
     opacity: 0%;
 }
-#game4{
+
+#game4 {
     position: absolute;
     background-color: blue;
     height: 5px;
@@ -279,7 +311,8 @@ input{
     left: 95.5px;
     opacity: 0%;
 }
-#game5{
+
+#game5 {
     position: absolute;
     background-color: blue;
     height: 5px;
@@ -288,7 +321,8 @@ input{
     left: 124.5px;
     opacity: 0%;
 }
-.scoreboard4pt2{
+
+.scoreboard4pt2 {
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -299,7 +333,8 @@ input{
     height: 20px;
     right: 5px;
 }
-#game6{
+
+#game6 {
     position: absolute;
     background-color: rgb(255, 136, 0);
     height: 5px;
@@ -308,7 +343,8 @@ input{
     left: 8.5px;
     opacity: 0%;
 }
-#game7{
+
+#game7 {
     position: absolute;
     background-color: rgb(255, 136, 0);
     height: 5px;
@@ -317,7 +353,8 @@ input{
     left: 37.5px;
     opacity: 0%;
 }
-#game8{
+
+#game8 {
     position: absolute;
     background-color: rgb(255, 136, 0);
     height: 5px;
@@ -326,7 +363,8 @@ input{
     left: 66.5px;
     opacity: 0%;
 }
-#game9{
+
+#game9 {
     position: absolute;
     background-color: rgb(255, 136, 0);
     height: 5px;
@@ -335,7 +373,8 @@ input{
     left: 95.5px;
     opacity: 0%;
 }
-#game10{
+
+#game10 {
     position: absolute;
     background-color: rgb(255, 136, 0);
     height: 5px;
@@ -344,7 +383,8 @@ input{
     left: 124.5px;
     opacity: 0%;
 }
-.home{
+
+.home {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -352,7 +392,8 @@ input{
     top: 25%;
     left: 2%;
 }
-.away{
+
+.away {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -360,39 +401,44 @@ input{
     top: 25%;
     right: 2%;
 }
-.scoreback{
+
+.scoreback {
     position: inherit;
     width: 30px;
     height: 40px;
     background-color: blue;
     left: 40%;
 }
-.scoreback2{
+
+.scoreback2 {
     position: inherit;
     width: 30px;
     height: 40px;
     background-color: rgb(255, 136, 0);
     right: 36%;
 }
-.score{
+
+.score {
     position: inherit;
     padding: 0%;
     margin: 0%;
     color: white;
     top: 15%;
     left: 35%;
-    font-size:x-large;
+    font-size: x-large;
 }
-.score2{
+
+.score2 {
     position: inherit;
     padding: 0%;
     margin: 0%;
     color: white;
     top: 15%;
     right: 35%;
-    font-size:x-large;
+    font-size: x-large;
 }
-.head{
+
+.head {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -400,7 +446,8 @@ input{
     left: 3%;
     font-size: 75%;
 }
-.games{
+
+.games {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -408,82 +455,93 @@ input{
     left: 10%;
     top: 10%;
 }
-.game1out{
+
+.game1out {
     background-color: rgba(255, 255, 255, 0.635);
     height: 6px;
     width: 19px;
     opacity: 100%;
 }
-.game2out{
+
+.game2out {
     background-color: rgba(255, 255, 255, 0.635);
     height: 6px;
     width: 19px;
     opacity: 100%;
 }
-.scoreboard2{
+
+.scoreboard2 {
     position: absolute;
     width: 620px;
     height: 40px;
     top: 15px;
     right: 25%;
 }
-.pt1{
+
+.pt1 {
     left: 0px;
     position: inherit;
     width: 250px;
     height: 35px;
     background-image: linear-gradient(to top right, rgb(0, 85, 255), rgb(9, 4, 81));
-    clip-path: polygon(0 10%,10% -10%,100% 0,100% 0%,100% 100%,100% 100%,5% 100%,0% 85%,0% 10%)
+    clip-path: polygon(0 10%, 10% -10%, 100% 0, 100% 0%, 100% 100%, 100% 100%, 5% 100%, 0% 85%, 0% 10%)
 }
-.pt2{
+
+.pt2 {
     left: 280px;
     position: inherit;
     width: 60px;
     height: 35px;
-    background-image: linear-gradient(rgb(0, 0, 0),rgb(53, 53, 53));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(53, 53, 53));
 }
-.pt3{
+
+.pt3 {
     right: 0px;
     position: inherit;
     width: 250px;
     height: 35px;
     background-image: linear-gradient(to top left, rgb(255, 136, 0), rgb(59, 32, 1));
-    clip-path: polygon(0 0%,0% 0,95% 0,100% 15%,100% 85%,95% 100%,0% 100%,0% 90%,0% 10%);
+    clip-path: polygon(0 0%, 0% 0, 95% 0, 100% 15%, 100% 85%, 95% 100%, 0% 100%, 0% 90%, 0% 10%);
 }
-.scoreback{
+
+.scoreback {
     position: inherit;
     width: 30px;
     height: 35px;
     background-color: rgb(0, 85, 255);
     left: 250px;
 }
-.scoreback2{
+
+.scoreback2 {
     position: inherit;
     width: 30px;
     height: 35px;
     background-color: rgb(255, 136, 0);
     left: 340px;
 }
-.timer{
+
+.timer {
     position: inherit;
     padding: 0%;
     margin: 0%;
     color: white;
     top: 10%;
     left: 10%;
-    font-size:x-large;
+    font-size: x-large;
 }
-/* -- End -- */ 
+
+/* -- End -- */
 /* -- Stats -- */
-.data{
+.data {
     position: absolute;
     bottom: 0%;
     left: 0px;
     width: 150px;
     height: 30px;
-    background-image:linear-gradient(rgb(0, 0, 0), rgb(0, 85, 255));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 85, 255));
 }
-.data2{
+
+.data2 {
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -493,10 +551,11 @@ input{
     left: 150px;
     width: 450px;
     height: 30px;
-    background-image:linear-gradient(rgb(0, 0, 0), rgb(0, 85, 255));
-    clip-path: polygon(0 0%,0% 0%,100% 0%,98% 0%,96% 100%,95% 100%,0% 100%,0% 90%,0% 10%);
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 85, 255));
+    clip-path: polygon(0 0%, 0% 0%, 100% 0%, 98% 0%, 96% 100%, 95% 100%, 0% 100%, 0% 90%, 0% 10%);
 }
-.statsp{
+
+.statsp {
     position: absolute;
     left: 10px;
     padding: 0%;
@@ -504,12 +563,14 @@ input{
     color: white;
     font-size: x-large;
 }
-.statss{
+
+.statss {
     padding: 0%;
     margin: 0%;
     color: white;
 }
-.pscore{
+
+.pscore {
     position: absolute;
     top: 6px;
     left: 40px;
@@ -517,12 +578,14 @@ input{
     margin: 0%;
     color: white;
 }
-.statsg{
+
+.statsg {
     padding: 0%;
     margin: 0%;
     color: white;
 }
-.goals{
+
+.goals {
     position: absolute;
     top: 6px;
     left: 130px;
@@ -530,12 +593,14 @@ input{
     margin: 0%;
     color: white;
 }
-.statsa{
+
+.statsa {
     padding: 0%;
     margin: 0%;
     color: white;
 }
-.assists{
+
+.assists {
     position: absolute;
     top: 6px;
     left: 220px;
@@ -543,12 +608,14 @@ input{
     margin: 0%;
     color: white;
 }
-.statssa{
+
+.statssa {
     padding: 0%;
     margin: 0%;
     color: white;
 }
-.saves{
+
+.saves {
     position: absolute;
     top: 6px;
     left: 310px;
@@ -556,12 +623,14 @@ input{
     margin: 0%;
     color: white;
 }
-.statsd{
+
+.statsd {
     padding: 0%;
     margin: 0%;
     color: white;
 }
-.demos{
+
+.demos {
     position: absolute;
     top: 6px;
     left: 400px;
@@ -569,4 +638,5 @@ input{
     margin: 0%;
     color: white;
 }
+
 /* -- End -- */

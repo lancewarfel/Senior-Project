@@ -17,5 +17,5 @@
   <Players />
   <Spectating />
 
-  {$replayStore}
+  <!-- {$replayStore} -->
 </body>
