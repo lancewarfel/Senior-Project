@@ -12,10 +12,21 @@ export const targetPlayerStore = writable({
     boost: 0,
     team: 0
 })
-export const timeStore = writable(0)
-export const blueTeamStore = writable({})
-export const orangeTeamStore = writable({})
-export const playersStore = writable([])
+export const timeStore = writable(300)
+export const blueTeamStore = writable(0)
+export const orangeTeamStore = writable(0)
+export const playersStore = writable([
+    {
+        team: 0,
+        name: "defaultBlue",
+        boost: 75
+    },
+    {
+        team: 1,
+        name: "defaultOrange",
+        boost: 75
+    }
+])
 export const overtimeStore = writable(false)
 export const replayStore = writable(false)
 export const headerStore = writable("Nace Starleague | Varsity Plus | Week 4")
