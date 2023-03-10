@@ -50,15 +50,11 @@
       <div class="game1out"><div id="game1" /></div>
       <div class="game1out"><div id="game2" /></div>
       <div class="game1out"><div id="game3" /></div>
-      <div class="game1out"><div id="game4" /></div>
-      <div class="game1out"><div id="game5" /></div>
     </div>
     <div class="scoreboard4pt2">
       <div class="game2out"><div id="game6" /></div>
       <div class="game2out"><div id="game7" /></div>
       <div class="game2out"><div id="game8" /></div>
-      <div class="game2out"><div id="game9" /></div>
-      <div class="game2out"><div id="game10" /></div>
     </div>
   </div>
 
@@ -99,7 +95,7 @@
     width: 620px;
     height: 40px;
     top: 15px;
-    right: 25%;
+    right: 28%;
   }
 
   .footer {
@@ -115,7 +111,7 @@
   .gameboard {
     position: absolute;
     top: 50px;
-    left: 32.75%;
+    left: 35.75%;
     width: 450px;
     height: 20px;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
@@ -173,26 +169,6 @@
     opacity: 0%;
   }
 
-  #game4 {
-    position: absolute;
-    background-color: blue;
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 95.5px;
-    opacity: 0%;
-  }
-
-  #game5 {
-    position: absolute;
-    background-color: blue;
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 124.5px;
-    opacity: 0%;
-  }
-
   .scoreboard4pt2 {
     display: flex;
     flex-direction: row;
@@ -202,7 +178,7 @@
     gap: 10px;
     width: 150px;
     height: 20px;
-    right: 5px;
+    right: 10px;
   }
 
   #game6 {
@@ -235,33 +211,13 @@
     opacity: 0%;
   }
 
-  #game9 {
-    position: absolute;
-    background-color: rgb(255, 136, 0);
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 95.5px;
-    opacity: 0%;
-  }
-
-  #game10 {
-    position: absolute;
-    background-color: rgb(255, 136, 0);
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 124.5px;
-    opacity: 0%;
-  }
-
   .home {
     position: inherit;
     padding: 0%;
     margin: 0%;
     color: white;
     top: 25%;
-    left: 2%;
+    left: 10%;
   }
 
   .away {
@@ -270,7 +226,7 @@
     margin: 0%;
     color: white;
     top: 25%;
-    right: 2%;
+    right: 10%;
   }
 
   .scoreback {
@@ -278,7 +234,6 @@
     width: 30px;
     height: 40px;
     background-color: blue;
-    left: 40%;
   }
 
   .scoreback2 {
@@ -286,7 +241,6 @@
     width: 30px;
     height: 40px;
     background-color: rgb(255, 136, 0);
-    right: 36%;
   }
 
   .score {
@@ -413,10 +367,10 @@
 
   .timer {
     position: inherit;
-    padding: 0%;
-    margin: 0%;
+    margin-top: -19px;
+    margin-left: 3px;
     color: white;
-    top: 10%;
+
     left: 10%;
     font-size: x-large;
   }

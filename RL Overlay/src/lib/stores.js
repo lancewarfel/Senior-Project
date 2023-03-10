@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 
 //update state stores
 export const targetPlayerStore = writable({
-    name: 0,
+    name: "Default",
     score: 0,
     goals: 0,
     assists: 0,

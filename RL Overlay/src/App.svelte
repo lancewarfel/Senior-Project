@@ -13,7 +13,7 @@
 
 <body>
   <Score />
-  <Time />
+  <!-- <Time /> -->
   <Players />
   <Spectating />
 
