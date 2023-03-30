@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 275px;
+    width: 250px;
     height: 150px;
     position: absolute;
     top: 2%;
@@ -52,7 +52,7 @@
   .bluePlayer {
     background-image: linear-gradient(rgb(0, 80, 201), rgb(0, 0, 0));
     height: 30px;
-    width: 225px;
+    width: 200px;
     clip-path: polygon(
       0 0%,
       0% 0,
@@ -68,7 +68,7 @@
 
   .blueName {
     position: absolute;
-    padding: 0%;
+    padding-left: 10px;
     margin: 0%;
     color: white;
     left: 1%;
@@ -76,7 +76,7 @@
 
   #blueBoost {
     background-color: rgb(0, 85, 255);
-    width: 200px;
+    width: 175px;
     height: 5px;
     top: 11%;
     left: 0.5%;
@@ -85,10 +85,10 @@
 
   .blueBar {
     position: relative;
-    width: 200px;
+    width: 173px;
     height: 6px;
     top: 70%;
-    left: 2px;
+    left: 10px;
     background-color: rgba(84, 84, 84, 0.409);
   }
 
@@ -97,7 +97,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 15px;
-    width: 275px;
+    width: 250px;
     height: 150px;
     position: absolute;
     top: 2%;
@@ -107,7 +107,7 @@
   .orangePlayer {
     background-image: linear-gradient(rgb(145, 87, 0), rgb(0, 0, 0));
     height: 30px;
-    width: 225px;
+    width: 200px;
     clip-path: polygon(
       0 10%,
       10% -10%,
@@ -123,24 +123,23 @@
 
   .orangeName {
     position: absolute;
-    padding: 0%;
     margin: 0%;
     color: white;
-    right: 1%;
+    right: 12px;
   }
 
   .orangeBar {
     position: relative;
-    width: 200px;
+    width: 175px;
     height: 6px;
     top: 70%;
-    left: 19px;
+    left: 13px;
     background-color: rgba(84, 84, 84, 0.409);
   }
 
   #orangeBoost {
     background-color: rgb(255, 136, 0);
-    width: 200px;
+    width: 175px;
     height: 5px;
     top: 11%;
     right: 0.5%;
@@ -149,14 +148,14 @@
 
   .orangeBoostNum {
     position: absolute;
-    padding: 0%;
+    padding-left: 5px;
     margin: 0%;
     color: white;
     left: 23%;
   }
   .blueBoostNum {
     position: absolute;
-    padding: 0%;
+    padding-right: 5px;
     margin: 0%;
     color: rgb(255, 255, 255);
     right: 24%;

@@ -18,3 +18,9 @@
 
   <!-- {$replayStore} -->
 </body>
+
+<style>
+  body {
+    zoom: 150%;
+  }
+</style>

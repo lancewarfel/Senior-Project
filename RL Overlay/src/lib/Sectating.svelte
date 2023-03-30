@@ -1,11 +1,21 @@
 <script>
   import { targetPlayerStore } from "./stores";
   import Boost from "./Boost.svelte";
+
+  let target = $targetPlayerStore
   $: target = $targetPlayerStore;
+
+  let color = 'linear-gradient(rgb(0, 0, 0), rgb(132, 132, 132))'
+
+  $: if(target?.team == 0)
+    color = 'linear-gradient(rgb(0, 0, 0), rgb(0, 85, 255))'
+
+  $: if(target?.team == 1)
+    color = 'linear-gradient(rgb(0, 0, 0), rgb(255, 136, 0))'
 </script>
 
 {#if $targetPlayerStore}<!-- add to remove when replay -->
-  <div class="spectating">
+  <div class="spectating" style="background-image: {color};">
     <div class="name">
       <p class="targetName">{target.name}</p>
     </div>
@@ -35,7 +45,7 @@
     
   </div>
     
-  <Boost percent={target.boost} />
+  <Boost percent={target.boost} team={target.team} />
     
 {/if}
 
@@ -46,22 +56,7 @@
     bottom: 0%;
     display: flex;
     flex-direction: row;
-  }
-  
-  .name {
-    width: 150px;
-    height: 30px;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 85, 255));
-  }
-
-  .all-stats {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 35px;
-    width: 450px;
-    height: 30px;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 85, 255));
+    background-image: var(--color);
     clip-path: polygon(
       0 0%,
       0% 0%,
@@ -74,6 +69,20 @@
       0% 10%
     );
   }
+  
+  .name {
+    width: 150px;
+    height: 30px;
+  }
+
+  .all-stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    width: 450px;
+    height: 30px;
+  }
 
   .targetName {
     position: absolute;
@@ -81,12 +90,12 @@
     padding: 0%;
     margin: 0%;
     color: white;
-    font-size: x-large;
+    font-size: 25px;
   }
 
   .stat{
     margin: 0%;
-    padding: 0%;
+    padding-left: 3px;
     display: flex;
   }
 

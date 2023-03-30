@@ -1,20 +1,40 @@
 <script>
   export let percent = 100;
+  export let team = 2;
   $: percent = percent;
+  $: team = team;
 
+  let color = 'radial-gradient(rgb(132, 132, 132), rgb(0, 0, 0))';
   var radius = 65;
   var circumference = radius * 2 * Math.PI;
 
   var offset;
   $: offset = circumference - ((percent * 0.75) / 100) * circumference;
-  //   $: circle.style.strokeDashoffset = offset;
+
+  $: if(team == 0)
+    color = 'radial-gradient(rgb(0, 85, 255), rgb(0, 0, 0))'
+
+  $: if(team == 1)
+    color = 'radial-gradient(rgb(255, 136, 0), rgb(0, 0, 0))'
 </script>
 
 <div class="gauge">
   <p id="boostNum">{percent}</p>
   <p class="boost">Boost</p>
-  <svg class="progress-ring" width="160" height="160">
+  
+  <svg class="progress-ring" width="160" height="160" style="background-image: {color};">
     <circle
+      id="progress-ring__circle"
+      stroke-dashoffset={circumference - ((100 * 0.75) / 100) * circumference}
+      stroke="#848484"
+      stroke-width="15"
+      fill="transparent"
+      r="65"
+      cx="80"
+      cy="80"
+    />
+    {#if percent > 0}
+      <circle
       id="progress-ring__circle"
       stroke-dashoffset={offset}
       stroke="white"
@@ -24,13 +44,16 @@
       cx="80"
       cy="80"
     />
-  </svg>
+    {/if}
+    
+  </svg> 
 </div>
 
 <style>
+  
   .progress-ring {
-    background-image: radial-gradient(rgb(132, 132, 132), rgb(0, 0, 0));
-    display: flex;
+    background-image: var(--color);
+    display: flex;  
     align-items: center;
     justify-content: center;
     height: 100%;

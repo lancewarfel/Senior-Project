@@ -66,7 +66,7 @@
     position: static;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -10px;
+    margin-top: -12px;
     width: 200px;
     height: 15px;
     background-image: linear-gradient(rgb(94, 94, 94), rgb(0, 0, 0));
