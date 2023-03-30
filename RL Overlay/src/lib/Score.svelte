@@ -41,9 +41,7 @@
     </div>
   </div>
 
-  <div class="footer">
-    <p class="games">{$footerStore}</p>
-  </div>
+  
 
   <div class="gameboard">
     <div class="scoreboard4">
@@ -57,61 +55,40 @@
       <div class="game2out"><div id="game8" /></div>
     </div>
   </div>
-
-  <!-- <div class="scorebug">
-    <table class="team-info">
-      <tr class="team-left">
-        <div class="scorebox">
-          <th class="score">{blueScore}</th>
-        </div>
-        <div class="namebox">
-          <th class="name">Blue Team</th>
-        </div>
-      </tr>
-      <tr class="team-right">
-        <div class="scorebox">
-          <th class="score">{orangeScore}</th>
-        </div>
-        <div class="namebox">
-          <th class="name">Orange Team</th>
-        </div>
-      </tr>
-    </table>
-  </div> -->
+  
+  <div class="footer">
+    <p class="games">{$footerStore}</p>
+  </div>
 {/if}
 
 <style>
   .header {
-    position: absolute;
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
     width: 200px;
     height: 15px;
     background-image: linear-gradient(rgb(94, 94, 94), rgb(0, 0, 0));
-    top: 0%;
-    right: 42%;
   }
 
   .teamDetails {
-    position: absolute;
+    position: static;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
     width: 620px;
     height: 40px;
-    top: 15px;
-    right: 28%;
   }
 
-  .footer {
-    position: absolute;
-    width: 150px;
-    height: 25px;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
-    top: 50px;
-    right: 44%;
-    z-index: 1;
-  }
+  
 
   .gameboard {
-    position: absolute;
-    top: 50px;
-    left: 35.75%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5px;
     width: 450px;
     height: 20px;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
@@ -126,6 +103,17 @@
       0% 85%,
       0% 10%
     );
+  }
+  
+  .footer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    width: 150px;
+    height: 25px;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
+    
   }
 
   .scoreboard4 {
@@ -264,11 +252,8 @@
   }
 
   .head {
-    position: inherit;
-    padding: 0%;
-    margin: 0%;
+    text-align: center;
     color: white;
-    left: 3%;
     font-size: 75%;
   }
 

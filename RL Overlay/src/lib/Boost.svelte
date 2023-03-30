@@ -11,8 +11,8 @@
 </script>
 
 <div class="gauge">
-  <p id="guageb">{percent}</p>
-  <p class="guageb2">Boost</p>
+  <p id="boostNum">{percent}</p>
+  <p class="boost">Boost</p>
   <svg class="progress-ring" width="160" height="160">
     <circle
       id="progress-ring__circle"
@@ -25,14 +25,6 @@
       cy="80"
     />
   </svg>
-  <!-- <input
-    value={100}
-    type="number"
-    step="5"
-    min="0"
-    max="100"
-    placeholder="progress"
-  /> -->
 </div>
 
 <style>
@@ -55,11 +47,11 @@
   .gauge {
     display: block;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 1%;
+    right: 1%;
   }
 
-  #guageb {
+  #boostNum {
     position: inherit;
     padding: 0%;
     margin: 0%;
@@ -70,7 +62,7 @@
     z-index: 1;
   }
 
-  .guageb2 {
+  .boost {
     position: inherit;
     padding: 0%;
     margin: 0%;

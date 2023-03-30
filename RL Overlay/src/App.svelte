@@ -12,10 +12,9 @@
 </script>
 
 <body>
-  <Score />
-  <!-- <Time /> -->
-  <Players />
-  <Spectating />
+  <div class="score"><Score /></div>
+  <div class="players"><Players /></div>
+  <div class="spectating"><Spectating /></div>
 
   <!-- {$replayStore} -->
 </body>
