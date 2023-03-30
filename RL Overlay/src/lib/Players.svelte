@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 300px;
+    width: 275px;
     height: 150px;
     position: absolute;
     top: 2%;
@@ -52,7 +52,7 @@
   .bluePlayer {
     background-image: linear-gradient(rgb(0, 80, 201), rgb(0, 0, 0));
     height: 30px;
-    width: 250px;
+    width: 225px;
     clip-path: polygon(
       0 0%,
       0% 0,
@@ -76,7 +76,7 @@
 
   #blueBoost {
     background-color: rgb(0, 85, 255);
-    width: 250px;
+    width: 200px;
     height: 5px;
     top: 11%;
     left: 0.5%;
@@ -85,7 +85,7 @@
 
   .blueBar {
     position: relative;
-    width: 227px;
+    width: 200px;
     height: 6px;
     top: 70%;
     left: 2px;
@@ -97,7 +97,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 15px;
-    width: 300px;
+    width: 275px;
     height: 150px;
     position: absolute;
     top: 2%;
@@ -107,7 +107,7 @@
   .orangePlayer {
     background-image: linear-gradient(rgb(145, 87, 0), rgb(0, 0, 0));
     height: 30px;
-    width: 250px;
+    width: 225px;
     clip-path: polygon(
       0 10%,
       10% -10%,
@@ -131,7 +131,7 @@
 
   .orangeBar {
     position: relative;
-    width: 227px;
+    width: 200px;
     height: 6px;
     top: 70%;
     left: 19px;
@@ -140,7 +140,7 @@
 
   #orangeBoost {
     background-color: rgb(255, 136, 0);
-    width: 250px;
+    width: 200px;
     height: 5px;
     top: 11%;
     right: 0.5%;

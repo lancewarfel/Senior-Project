@@ -9,7 +9,7 @@ export const targetPlayerStore = writable({
     saves: 0,
     shots: 0,
     demos: 0,
-    boost: 0,
+    boost: 75,
     team: 0
 })
 export const timeStore = writable(300)

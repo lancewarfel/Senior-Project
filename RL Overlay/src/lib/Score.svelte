@@ -20,7 +20,7 @@
   </div>
 
   <div class="teamDetails">
-    <div class="pt1">
+    <div class="team1">
       <p class="home">{$blueNameStore}</p>
     </div>
 
@@ -28,7 +28,7 @@
       <p class="score">{blueScore}</p>
     </div>
 
-    <div class="pt2">
+    <div class="time">
       <p class="timer"><Time /></p>
     </div>
 
@@ -36,7 +36,7 @@
       <p class="score2">{orangeScore}</p>
     </div>
 
-    <div class="pt3">
+    <div class="team2">
       <p class="away">{$orangeNameStore}</p>
     </div>
   </div>
@@ -201,8 +201,9 @@
 
   .home {
     position: inherit;
-    padding: 0%;
-    margin: 0%;
+    text-align: end;
+    padding-right: 7px;
+    margin-top: 7px;
     color: white;
     top: 25%;
     left: 10%;
@@ -210,8 +211,9 @@
 
   .away {
     position: inherit;
-    padding: 0%;
-    margin: 0%;
+    text-align: start;
+    padding-left: 7px;
+    margin-top: 7px;
     color: white;
     top: 25%;
     right: 10%;
@@ -232,8 +234,8 @@
   }
 
   .score {
-    position: inherit;
-    padding: 0%;
+    text-align: center;
+    padding-top: 4px;
     margin: 0%;
     color: white;
     top: 15%;
@@ -242,8 +244,8 @@
   }
 
   .score2 {
-    position: inherit;
-    padding: 0%;
+    text-align: center;
+    padding-top: 4px;
     margin: 0%;
     color: white;
     top: 15%;
@@ -280,7 +282,7 @@
     opacity: 100%;
   }
 
-  .pt1 {
+  .team1 {
     left: 0px;
     position: inherit;
     width: 250px;
@@ -303,7 +305,7 @@
     );
   }
 
-  .pt2 {
+  .time {
     left: 280px;
     position: inherit;
     width: 60px;
@@ -311,7 +313,7 @@
     background-image: linear-gradient(rgb(0, 0, 0), rgb(53, 53, 53));
   }
 
-  .pt3 {
+  .team2 {
     right: 0px;
     position: inherit;
     width: 250px;
@@ -352,10 +354,9 @@
 
   .timer {
     position: inherit;
+    text-align: center;
     margin-top: -19px;
-    margin-left: 3px;
     color: white;
-
     left: 10%;
     font-size: x-large;
   }
