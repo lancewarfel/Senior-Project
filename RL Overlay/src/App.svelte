@@ -21,6 +21,6 @@
 
 <style>
   body {
-    zoom: 150%;
+    zoom: 155%;
   }
 </style>

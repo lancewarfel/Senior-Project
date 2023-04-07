@@ -29,6 +29,12 @@ export const playersStore = writable([
 ])
 export const overtimeStore = writable(false)
 export const replayStore = writable(false)
+export const statEventStore = writable({
+    event_name: null,
+    main_target: {
+        name: null
+    }
+})
 export const headerStore = writable("Nace Starleague | Varsity Plus | Week 4")
 export const blueNameStore = writable("Western Kentucky University")
 export const orangeNameStore = writable("Murray State University")
