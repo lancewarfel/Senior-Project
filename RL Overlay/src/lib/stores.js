@@ -39,5 +39,3 @@ export const headerStore = writable("Nace Starleague | Varsity Plus | Week 4")
 export const blueNameStore = writable("Western Kentucky University")
 export const orangeNameStore = writable("Murray State University")
 export const footerStore = writable("Game 4 | Best of 5")
-
-

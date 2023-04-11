@@ -1,11 +1,11 @@
 import * as R from 'ramda'
-import { blueTeamStore, orangeTeamStore, overtimeStore, playersStore, replayStore, targetPlayerStore, timeStore, statEventStore } from './stores';
+import { blueTeamStore, orangeTeamStore, overtimeStore, playersStore, replayStore, targetPlayerStore, timeStore, statEventStore, headerStore, blueNameStore, orangeNameStore, footerStore } from './stores';
 
 export const processor = (socketMessageStore) => {
     R.cond([
         [(socketMessageStore) => socketMessageStore.event === "game:update_state", onUpdateState],
         [(socketMessageStore) => socketMessageStore.event === "game:statfeed_event", onStatfeedEvent],
-        [(socketMessageStore) => socketMessageStore.event === "newMsg", onNewMsg],
+        [(socketMessageStore) => socketMessageStore.event === "game:update_data", onNewMsg],
     ])(socketMessageStore)
 }
 
@@ -27,7 +27,11 @@ const onStatfeedEvent = ({ data }) => {
 }
 
 const onNewMsg = ({ data }) => {
-
+    console.log(data)
+    headerStore.set(data.header)
+    blueNameStore.set(data.blueName)
+    orangeNameStore.set(data.orangeName)
+    footerStore.set(data.footer)
 }
 
 
