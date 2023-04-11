@@ -1,5 +1,19 @@
 import * as R from 'ramda'
-import { blueTeamStore, orangeTeamStore, overtimeStore, playersStore, replayStore, targetPlayerStore, timeStore, statEventStore, headerStore, blueNameStore, orangeNameStore, footerStore } from './stores';
+import { blueTeamStore, 
+    orangeTeamStore, 
+    overtimeStore, 
+    playersStore, 
+    replayStore, 
+    targetPlayerStore, 
+    timeStore, 
+    statEventStore, 
+    headerStore, 
+    blueNameStore, 
+    orangeNameStore, 
+    footerStore, 
+    blueSeriesStore, 
+    orangeSeriesStore, 
+    seriesLengthStore} from './stores';
 
 export const processor = (socketMessageStore) => {
     R.cond([
@@ -27,11 +41,15 @@ const onStatfeedEvent = ({ data }) => {
 }
 
 const onNewMsg = ({ data }) => {
-    console.log(data)
     headerStore.set(data.header)
     blueNameStore.set(data.blueName)
+    blueSeriesStore.set(data.blueScore)
     orangeNameStore.set(data.orangeName)
-    footerStore.set(data.footer)
+    orangeSeriesStore.set(data.orangeScore)
+    let gameNum  = data.gameNum
+    if(data.gameNum > data.seriesLength) gameNum-- 
+    footerStore.set(`Game ${gameNum} | Best of ${data.seriesLength}`)
+    seriesLengthStore.set(data.seriesLength)
 }
 
 

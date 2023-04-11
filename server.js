@@ -12,15 +12,10 @@ wss.on('connection', (ws, req) => {
     const ip = req.socket.remoteAddress;
     const port = req.socket.remotePort;
 
-    console.log('WebSocket connection opened', req.socket.remotePort);
+    console.log('WebSocket connection opened', req.socket.remoteAddress);
     // Add an event listener to handle incoming messages
     ws.on('message', (message) => {
         const parsed = JSON.parse(message);
-
-        if (message.receiver == "clients") {
-            //find overlay in clients
-            //send that shit
-        }
 
         switch (parsed.receiver) {
             case "clients":
@@ -46,18 +41,23 @@ wss.on('connection', (ws, req) => {
                 console.log("Something went wrong")
         }
 
-        //else...
-        console.log("New msg:", parsed.data);
-        console.log(parsed.receiver);
-        console.log(clients.length);
+        //else...        
+        console.log(clients.length, " clients connected");
     });
 
     // Add an event listener to handle connection close
     ws.on('close', () => {
-        let client = clients.filter(obj => {
-            return obj.ws === ws
-        })
-        clients.delete(client)
-        console.log('WebSocket connection closed', client.component);
+        let client
+        
+        for (i in clients){
+            if(ws == clients[i].ws){
+                client = clients[i]
+                clients.splice(i, 1)
+                
+            }
+        }
+        console.log('WebSocket connection closed:', client.component);
+        console.log(clients.length, " clients connected")
+        
     });
 });

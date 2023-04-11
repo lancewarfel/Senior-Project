@@ -35,7 +35,15 @@ export const statEventStore = writable({
         name: null
     }
 })
-export const headerStore = writable("Nace Starleague | Varsity Plus | Week 4")
-export const blueNameStore = writable("Western Kentucky University")
-export const orangeNameStore = writable("Murray State University")
-export const footerStore = writable("Game 4 | Best of 5")
+export const headerStore = writable("")
+export const blueNameStore = writable("")
+export const blueSeriesStore = writable(0)
+export const orangeNameStore = writable("")
+export const orangeSeriesStore = writable(0)
+export const footerStore = writable("")
+export const seriesLengthStore = writable(5)
+
+// Nace Starleague | Varsity Plus | Week 4
+// Western Kentucky University
+// Murray State University
+// Game 4 | Best of 5

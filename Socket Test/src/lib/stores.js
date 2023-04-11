@@ -12,3 +12,5 @@ export const blueNameStore = writable("Default Blue")
 export const orangeNameStore = writable("Default Orange")
 export const footerStore = writable("Default Footer")
 
+export const seriesLengthStore = writable(1)
+

@@ -7,11 +7,18 @@
     footerStore,
     orangeNameStore,
     blueNameStore,
+    blueSeriesStore,
+    orangeSeriesStore,
+    seriesLengthStore
   } from "./stores";
   import Time from "./Time.svelte";
 
   $: blueScore = $blueTeamStore;
   $: orangeScore = $orangeTeamStore;
+
+  $: blueSeries = $blueSeriesStore
+  $: orangeSeries = $orangeSeriesStore
+  $: winScore = $seriesLengthStore / 2 + .5
 </script>
 
 {#if $timeStore}
@@ -44,15 +51,23 @@
   
 
   <div class="gameboard">
-    <div class="scoreboard4">
-      <div class="game1out"><div id="game1" /></div>
-      <div class="game1out"><div id="game2" /></div>
-      <div class="game1out"><div id="game3" /></div>
+    <div class="blueSeries">
+      {#each Array(winScore) as _, i}
+        <div class="sb">
+          {#if blueSeries >= i + 1}
+            <div class="win" />
+          {/if}
+        </div>
+      {/each}
     </div>
-    <div class="scoreboard4pt2">
-      <div class="game2out"><div id="game6" /></div>
-      <div class="game2out"><div id="game7" /></div>
-      <div class="game2out"><div id="game8" /></div>
+    <div class="orangeSeries">
+      {#each Array(winScore) as _, i}
+        <div class="sb">
+          {#if orangeSeries >= i + 1}
+            <div class="win" />
+          {/if}
+        </div>
+      {/each}
     </div>
   </div>
   
@@ -82,13 +97,11 @@
     height: 40px;
   }
 
-  
-
   .gameboard {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -5px;
+    margin-top: -5.3px;
     width: 450px;
     height: 20px;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
@@ -113,12 +126,11 @@
     width: 150px;
     height: 25px;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(94, 94, 94));
-    
   }
 
-  .scoreboard4 {
-    display: flex;
-    flex-direction: row;
+  .blueSeries {
+    display: inline-flex;
+    flex-direction: row-reverse;
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -127,38 +139,8 @@
     height: 20px;
   }
 
-  #game1 {
-    position: absolute;
-    background-color: blue;
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 8px;
-    opacity: 0%;
-  }
-
-  #game2 {
-    position: absolute;
-    background-color: blue;
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 37.5px;
-    opacity: 0%;
-  }
-
-  #game3 {
-    position: absolute;
-    background-color: blue;
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 66px;
-    opacity: 0%;
-  }
-
-  .scoreboard4pt2 {
-    display: flex;
+  .orangeSeries {
+    display: inline-flex;
     flex-direction: row;
     position: absolute;
     align-items: center;
@@ -167,36 +149,6 @@
     width: 150px;
     height: 20px;
     right: 10px;
-  }
-
-  #game6 {
-    position: absolute;
-    background-color: rgb(255, 136, 0);
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 8.5px;
-    opacity: 0%;
-  }
-
-  #game7 {
-    position: absolute;
-    background-color: rgb(255, 136, 0);
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 37.5px;
-    opacity: 0%;
-  }
-
-  #game8 {
-    position: absolute;
-    background-color: rgb(255, 136, 0);
-    height: 5px;
-    width: 17.5px;
-    top: 7.75px;
-    left: 66.5px;
-    opacity: 0%;
   }
 
   .home {
@@ -268,18 +220,24 @@
     top: 10%;
   }
 
-  .game1out {
-    background-color: rgba(255, 255, 255, 0.635);
-    height: 6px;
-    width: 19px;
+  .sb {
+    outline: white solid 1.3px;
+    height: 7px;
+    width: 20px;
     opacity: 100%;
+    margin-top: 2px;
   }
 
-  .game2out {
-    background-color: rgba(255, 255, 255, 0.635);
-    height: 6px;
-    width: 19px;
-    opacity: 100%;
+  .blueSeries .sb .win {
+    background-color: #2e46c0;
+    height: 7px;
+    width: 20px;
+  }
+
+  .orangeSeries .sb .win {
+    background-color: #c6632c;
+    height: 7px;
+    width: 20px;
   }
 
   .team1 {
