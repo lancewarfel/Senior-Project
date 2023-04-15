@@ -1,4 +1,12 @@
 <script>
+    import { writable } from "svelte/store";
+  import { socketMessageStore, newSocket } from "./lib/socket";
+  import { gameDataStore } from "./lib/stores";
+
+  
+  // const gameDataStore = writable([])
+
+
   $: seriesLength = 1;
   $: winScore = seriesLength / 2 + .5;
   $: blueScore = 0;
@@ -28,34 +36,8 @@
     },
   };
   
-  let socket;
-
-  function connectWebSocket() {
-    // Create a new WebSocket connection to the server
-    socket = new WebSocket("ws://localhost:3000");
-
-    const testMsg = {
-      receiver: "clients",
-      event: "",
-      data: "Overlay Manager",
-    };
-
-    socket.addEventListener("open", (event) => {
-      console.log("WebSocket connection opened");
-      socket.send(JSON.stringify(testMsg));
-    });
-
-    socket.addEventListener("message", (event) => {
-      console.log(`Received message from server: ${event.data}`);
-    });
-
-    socket.addEventListener("close", (event) => {
-      console.log("WebSocket connection closed");
-    });
-  }
-
   function updateData() {
-    socket.send(JSON.stringify(message));
+    newSocket.send(JSON.stringify(message));
   }
 
   function bluePlus(){
@@ -124,7 +106,16 @@
     orangeName = "Defaule Orange";
   }
 
-  connectWebSocket()
+  $: console.log($socketMessageStore, handleGameData());
+
+  function handleGameData(){  
+    $gameDataStore = [
+        ...$gameDataStore,
+        $socketMessageStore.data
+    ]
+    console.log($gameDataStore)
+  }
+  // connectWebSocket()
 </script>
 
 <div>

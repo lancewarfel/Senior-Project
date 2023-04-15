@@ -30,18 +30,20 @@ wss.on('connection', (ws, req) => {
                 for (i in clients) {
                     if (clients[i].component == parsed.receiver) {
                         clients[i].ws.send(JSON.stringify(parsed.data))
-                        console.log("i sent it");
                     }
                 }
                 break;
             case "Overlay Manager":
-                //code block
+                for (i in clients) {
+                    if (clients[i].component == parsed.receiver) {
+                        clients[i].ws.send(JSON.stringify(parsed))
+                    }
+                }
                 break;
             default:
                 console.log("Something went wrong")
         }
 
-        //else...        
         console.log(clients.length, " clients connected");
     });
 
