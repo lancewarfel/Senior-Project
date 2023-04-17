@@ -9,17 +9,13 @@
   $: console.log($socketMessageStore);
   $: processor($socketMessageStore);
 
-  // $: gameNum = 1
-
   $: message = {
       receiver: "Overlay Manager",
       data: $playersStore
-      
     }
 
   function sendMsg(){
     newSocket.send(JSON.stringify(message))
-    // gameNum++
   }
 </script>
 
