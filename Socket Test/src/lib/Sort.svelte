@@ -1,54 +1,69 @@
 <script>
+    import { socketMessageStore } from "./socket";
     import { gameDataStore, playerNameStore } from "./stores";
 
     $: console.log($playerNameStore)
     $: allData = $gameDataStore
     $: allPlayers = $playerNameStore
     
+    
+    $: userInputs = []
+    
     //$: storedPlayers = database.query("SELECT NAME FROM RLPLAYERS")
-    //$: userInputs = []?
+    const storedPlayer = ["Jay Bailey", "Gavin Maynard", "Isaac Lockwood", "Avery Bradley"]
 
     function wipeData(){
         gameDataStore.set([])
+        playerNameStore.set([])
+        socketMessageStore.set({
+            event: "default",
+            data: {},
+        })
     }
 
-    // function submitData(){}
+    // function submitData(){
 
         //loop through inputs?
 
             //if(input!="discard")
 
-                //loop thorugh allData 
+                //loop through allData 
 
                     //if(allData[j].name == allPlayers[i])?? (input index and allPlayer index should be same)
 
-                        //datbase.update("UPDATE RLPLAYERS SET (stat name here) = (stat name here) + (player stat) WHERE NAME = (input?))
+                        //datbase.update("UPDATE RLPLAYERS SET (stat name here) = (stat name here) + allData[j].(stat) WHERE NAME = (userInput[i]))
 
             // else 
                 //do nothing i guess? 
             
-    //     gameDataStore.set([]) //reset the gameDataStore
+    //     wipeData() //reset the gameDataStore
     //}
 
     
 </script>
-
-
-
+<body>
+    
 
 <h1>Add player to database</h1>
-{#each allPlayers as player}
-<!-- dropdown that has "discard", then all values from storedPlayers -->
-<!-- add each input to array? "discard" if no selection  -->
-    <p>{player}</p>
-{/each}
+
+    {#each allPlayers as player, i}
+        <div class="all-players">
+            <select class="dropdown" bind:value={userInputs[i]}>
+                <option value="discard">discard</option>
+                {#each storedPlayer as name}
+                    <option value="{name}">{name}</option>
+                {/each}
+            </select>
+            <p class="player">{player}</p>
+        </div>
+    {/each}
 
 
-<a href="#/" >
-    <button type="button" on:click={wipeData}>Submit Data</button>
-</a>
+    <a href="#/" >
+        <button type="button" on:click={wipeData}>Submit Data</button>
+    </a>
 
-
+</body>
 
 
 
@@ -69,3 +84,21 @@
         {/each}
     {/if}
 {/each} -->
+
+<style>
+
+    .all-players{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .player{
+        padding-left: 10px;
+        margin-top: 3px;
+        
+    }
+
+    .dropdown{
+        height:25px
+    }
+</style>

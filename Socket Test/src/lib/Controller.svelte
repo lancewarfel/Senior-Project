@@ -12,7 +12,7 @@ $: hasWinner = false;
 
 $: header = "Defualt Header";
 $: blueName = "Default Blue";
-$: orangeName = "Defaule Orange";
+$: orangeName = "Default Orange";
 
 $: playerNames = []
 
@@ -100,7 +100,7 @@ function reset(){
 
   header = "Defualt Header";
   blueName = "Default Blue";
-  orangeName = "Defaule Orange";
+  orangeName = "Default Orange";
 }
 $: handleGameData($socketMessageStore)
 

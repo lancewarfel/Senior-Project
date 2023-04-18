@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+import { newSocket } from './socket';
 import { blueTeamStore, 
     orangeTeamStore, 
     overtimeStore, 
@@ -14,10 +15,12 @@ import { blueTeamStore,
     blueSeriesStore, 
     orangeSeriesStore, 
     seriesLengthStore} from './stores';
+import { get } from 'svelte/store';
 
 export const processor = (socketMessageStore) => {
     R.cond([
         [(socketMessageStore) => socketMessageStore.event === "game:update_state", onUpdateState],
+        [(socketMessageStore) => socketMessageStore.event === "game:match_ended", onMatchEnded],
         [(socketMessageStore) => socketMessageStore.event === "game:statfeed_event", onStatfeedEvent],
         [(socketMessageStore) => socketMessageStore.event === "game:update_data", onNewMsg],
     ])(socketMessageStore)
@@ -31,6 +34,14 @@ const onUpdateState = ({ data }) => {
     playersStore.set(Object.values(data.players))
     overtimeStore.set(data.game.isOT)
     replayStore.set(data.game.isReplay)
+}
+
+const onMatchEnded = ({ data }) => {
+    newSocket.send(JSON.stringify({
+        receiver: "Overlay Manager",
+        data: get(playersStore)
+    }))
+    console.log("SENT DATA YURR")
 }
 
 const onStatfeedEvent = ({ data }) => {
