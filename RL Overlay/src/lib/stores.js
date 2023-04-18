@@ -42,6 +42,7 @@ export const orangeNameStore = writable("")
 export const orangeSeriesStore = writable(0)
 export const footerStore = writable("")
 export const seriesLengthStore = writable(5)
+export const playerDataStore = writable([])
 
 // Nace Starleague | Varsity Plus | Week 4
 // Western Kentucky University

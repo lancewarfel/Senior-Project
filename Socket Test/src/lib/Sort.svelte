@@ -49,7 +49,7 @@
     {#each allPlayers as player, i}
         <div class="all-players">
             <select class="dropdown" bind:value={userInputs[i]}>
-                <option value="discard">discard</option>
+                <option value="discard"></option>
                 {#each storedPlayer as name}
                     <option value="{name}">{name}</option>
                 {/each}
@@ -62,7 +62,6 @@
     <a href="#/" >
         <button type="button" on:click={wipeData}>Submit Data</button>
     </a>
-
 </body>
 
 

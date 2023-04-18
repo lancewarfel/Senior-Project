@@ -14,12 +14,14 @@ import { blueTeamStore,
     footerStore, 
     blueSeriesStore, 
     orangeSeriesStore, 
-    seriesLengthStore} from './stores';
+    seriesLengthStore,
+    playerDataStore} from './stores';
 import { get } from 'svelte/store';
 
 export const processor = (socketMessageStore) => {
     R.cond([
         [(socketMessageStore) => socketMessageStore.event === "game:update_state", onUpdateState],
+        [(socketMessageStore) => socketMessageStore.event === "game:goal_scored", onGoalScored],
         [(socketMessageStore) => socketMessageStore.event === "game:match_ended", onMatchEnded],
         [(socketMessageStore) => socketMessageStore.event === "game:statfeed_event", onStatfeedEvent],
         [(socketMessageStore) => socketMessageStore.event === "game:update_data", onNewMsg],
@@ -36,10 +38,14 @@ const onUpdateState = ({ data }) => {
     replayStore.set(data.game.isReplay)
 }
 
+const onGoalScored = ({ data }) => {
+    playerDataStore.set(get(playersStore))
+}
+
 const onMatchEnded = ({ data }) => {
     newSocket.send(JSON.stringify({
         receiver: "Overlay Manager",
-        data: get(playersStore)
+        data: get(playerDataStore)
     }))
     console.log("SENT DATA YURR")
 }
