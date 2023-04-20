@@ -1,7 +1,7 @@
 <script>
   import { processor } from "./lib/processor";
   import { socketMessageStore, newSocket } from "./lib/socket";
-  import { playersStore } from "./lib/stores";
+  import { playerDataStore } from "./lib/stores";
   import Score from "./lib/Score.svelte";
   import Spectating from "./lib/Sectating.svelte";
   import Players from "./lib/Players.svelte";
@@ -9,14 +9,15 @@
   $: console.log($socketMessageStore);
   $: processor($socketMessageStore);
 
-  $: message = {
-      receiver: "Overlay Manager",
-      data: $playersStore
-    }
+  // $: message = {
+  //     receiver: "Overlay Manager",
+  //     event: "gameData",
+  //     data: $playerDataStore
+  //   }
 
-  function sendMsg(){
-    newSocket.send(JSON.stringify(message))
-  }
+  // function sendMsg(){
+  //   newSocket.send(JSON.stringify(message))
+  // }
 </script>
 
 <body>
@@ -25,7 +26,7 @@
   <div class="players"><Players /></div>
   <div class="spectating"><Spectating /></div>
 
-  <button class="btn" type="button" on:click={sendMsg}>Send Packet</button>
+  <!-- <button class="btn" type="button" on:click={sendMsg}>Send Packet</button> -->
 
   <!-- {$replayStore} -->
 </body>
@@ -35,8 +36,8 @@
     zoom: 155%;
   }
 
-  .btn {
+  /* .btn {
     position: absolute;
     left: 50%;
-  }
+  } */
 </style>

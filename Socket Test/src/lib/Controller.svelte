@@ -102,21 +102,25 @@ function reset(){
   blueName = "Default Blue";
   orangeName = "Default Orange";
 }
-$: handleGameData($socketMessageStore)
+$: handleSocketData($socketMessageStore)
 
-function handleGameData($socketMessageStore){ 
+function handleSocketData($socketMessageStore){ 
   
-  $gameDataStore = [
-      ...$gameDataStore,
-      $socketMessageStore.data
-  ]//all data from from game gets stored
+  if($socketMessageStore.event == "gameData"){
+    $gameDataStore = [
+        ...$gameDataStore,
+        $socketMessageStore.data
+    ]//all data from from game gets stored
 
-  for(var i=0; i<$socketMessageStore.data.length; i++){
-    if (!playerNames.includes($socketMessageStore.data[i].name)){
-        playerNames.push($socketMessageStore.data[i].name)
-        $playerNameStore = playerNames 
-    }
-  }//storing only new names in the series
+    for(var i=0; i<$socketMessageStore.data.length; i++){
+      if (!playerNames.includes($socketMessageStore.data[i].name)){
+          playerNames.push($socketMessageStore.data[i].name)
+          $playerNameStore = playerNames 
+
+        
+      }
+    }//storing only new names in the series
+  }
 }
 </script>
 

@@ -9,10 +9,16 @@ const testMsg = {
   data: "Overlay Manager"
 }
 
+export const dbMsg = {
+  receiver: "Server",
+  event: "database_retrieve",
+  data: ""
+}
 
 newSocket.onopen = () => {
   console.log("Connected to server.");
   newSocket.send(JSON.stringify(testMsg))
+  newSocket.send(JSON.stringify(dbMsg))
 };
 
 

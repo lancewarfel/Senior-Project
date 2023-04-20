@@ -18,10 +18,14 @@ import { blueTeamStore,
     playerDataStore} from './stores';
 import { get } from 'svelte/store';
 
+let clock = false
+
 export const processor = (socketMessageStore) => {
     R.cond([
         [(socketMessageStore) => socketMessageStore.event === "game:update_state", onUpdateState],
         [(socketMessageStore) => socketMessageStore.event === "game:goal_scored", onGoalScored],
+        [(socketMessageStore) => socketMessageStore.event === "game:round_started_go", onClockStart],
+        [(socketMessageStore) => socketMessageStore.event === "game:clock_stopped", onClockStopped],
         [(socketMessageStore) => socketMessageStore.event === "game:match_ended", onMatchEnded],
         [(socketMessageStore) => socketMessageStore.event === "game:statfeed_event", onStatfeedEvent],
         [(socketMessageStore) => socketMessageStore.event === "game:update_data", onNewMsg],
@@ -33,21 +37,34 @@ const onUpdateState = ({ data }) => {
     timeStore.set(data.game.time_seconds)
     blueTeamStore.set(data.game.teams[0].score)
     orangeTeamStore.set(data.game.teams[1].score)
-    playersStore.set(Object.values(data.players))
+    if(clock) playersStore.set(Object.values(data.players))
     overtimeStore.set(data.game.isOT)
     replayStore.set(data.game.isReplay)
 }
 
-const onGoalScored = ({ data }) => {
+const onGoalScored = () => {
     playerDataStore.set(get(playersStore))
 }
 
-const onMatchEnded = ({ data }) => {
+const onClockStart = () => {
+    clock = true
+}
+
+const onClockStopped = () => {
+    clock = false
+}
+
+const onMatchEnded = () => {
     newSocket.send(JSON.stringify({
         receiver: "Overlay Manager",
-        data: get(playerDataStore)
+        event: "gameData",
+        data: get(playersStore)
     }))
-    console.log("SENT DATA YURR")
+    console.log("SENT DATA YURR", {
+        receiver: "Overlay Manager",
+        event: "gameData",
+        data: get(playersStore)
+    })
 }
 
 const onStatfeedEvent = ({ data }) => {

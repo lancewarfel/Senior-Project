@@ -1,16 +1,14 @@
 <script>
-    import { socketMessageStore } from "./socket";
-    import { gameDataStore, playerNameStore } from "./stores";
+    import { socketMessageStore, newSocket, dbMsg } from "./socket";
+    import { gameDataStore, playerNameStore, databaseStore, databaseNames } from "./stores";
 
-    $: console.log($playerNameStore)
+    $: database = $databaseStore
     $: allData = $gameDataStore
-    $: allPlayers = $playerNameStore
-    
+    $: allPlayers = $playerNameStore 
     
     $: userInputs = []
     
-    //$: storedPlayers = database.query("SELECT NAME FROM RLPLAYERS")
-    const storedPlayer = ["Jay Bailey", "Gavin Maynard", "Isaac Lockwood", "Avery Bradley"]
+    $: storedPlayers = $databaseNames
 
     function wipeData(){
         gameDataStore.set([])
@@ -20,24 +18,43 @@
             data: {},
         })
     }
+    
+    function submitData(){
 
-    // function submitData(){
+        userInputs.forEach((input, i) => {
+            if (input != -1){
+                
+                allData.forEach(gameData => { gameData.forEach(playerData => { 
+                    if(playerData.name == allPlayers[i]){
+                        console.log('index', input);
+                        console.log("selected player", allPlayers[i])
+                        console.log("selected database", database)
+                        updateData(input, playerData)
+                    }
+                })})
+            }
+        })
+        wipeData() //reset the gameDataStore
+    }
 
-        //loop through inputs?
+    function updateData(index, newData){
+        console.log("adding this data", newData)
+        newSocket.send(JSON.stringify({
+            receiver: "Server",
+            event: "update_player",
+            data: {
+                ign: database[index].ign,
+                games_played: 1,
+                goals: newData.goals,
+                shots: newData.shots,
+                assists: newData.assists,
+                saves: newData.saves,
+                demos: newData.demos
+            }
+        }))
 
-            //if(input!="discard")
-
-                //loop through allData 
-
-                    //if(allData[j].name == allPlayers[i])?? (input index and allPlayer index should be same)
-
-                        //datbase.update("UPDATE RLPLAYERS SET (stat name here) = (stat name here) + allData[j].(stat) WHERE NAME = (userInput[i]))
-
-            // else 
-                //do nothing i guess? 
-            
-    //     wipeData() //reset the gameDataStore
-    //}
+        // newSocket.send(JSON.stringify(dbMsg))
+    }
 
     
 </script>
@@ -49,9 +66,9 @@
     {#each allPlayers as player, i}
         <div class="all-players">
             <select class="dropdown" bind:value={userInputs[i]}>
-                <option value="discard"></option>
-                {#each storedPlayer as name}
-                    <option value="{name}">{name}</option>
+                <option value=-1></option>
+                {#each storedPlayers as name, i}
+                    <option value="{i}">{name}</option>
                 {/each}
             </select>
             <p class="player">{player}</p>
@@ -60,7 +77,7 @@
 
 
     <a href="#/" >
-        <button type="button" on:click={wipeData}>Submit Data</button>
+        <button type="button" on:click={submitData}>Submit Data</button>
     </a>
 </body>
 
