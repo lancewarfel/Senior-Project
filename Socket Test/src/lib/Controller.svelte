@@ -146,10 +146,6 @@ function handleSocketData($socketMessageStore){
 
   </div>
 </div>
-<p>Series Length: {seriesLength}</p>
-<p>Win Score: {winScore}</p>
-<p>Winner: {hasWinner}</p>
-<p>Game Number: {gameNum}</p>
 
 <input
     id="headerInput"
