@@ -1,0 +1,27 @@
+{
+  "name": "socket-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "main.cjs",
+  "scripts": {
+    "dev": "concurrently -k \"vite --port 3001\" \"npm run electron:start\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:start": "electron ."
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
+    "svelte": "^3.55.1",
+    "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "@types/socket.io-client": "^3.0.0",
+    "concurrently": "^8.0.1",
+    "electron": "^24.1.2",
+    "ramda": "^0.29.0",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "ws": "^8.13.0"
+  }
+}
