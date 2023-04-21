@@ -4,8 +4,10 @@ const { app, BrowserWindow } = require('electron');
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 370,
+    height: 620,
+    resizable: false,
+    backgroundColor: "#2E3440"
   });
 
   //win.loadFile('index.html');
